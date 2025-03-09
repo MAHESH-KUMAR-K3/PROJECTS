@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <title>Go Mechanic</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700" />
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}" />
+
+
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+  </head>
+<body>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    </div>
+
+  {% include 'mechanic_header.html' %}
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({% static 'images/hero_bg_1.jpg' %});" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+            <h1 class="text-white font-weight-light text-uppercase font-weight-bold">Mechanic profile edit</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <br>
+<form method ="POST" class="post-form" action="{% url 'mechanic_update' %}">
+    {% csrf_token %}
+		<div class="container h-100">
+							<h1 class="fs-4 card-title fw-bold mb-4">Update Here</h1>
+<!--                                 <div class="mb-3">-->
+<!--									<label class="mb-2 text-muted" for="id">Id</label>-->
+<!--									<input id="id" type="text" class="form-control" name="id" value="{{mechanic.id}}" required autofocus>-->
+<!--								</div>-->
+                                <div class="mb-3">
+									<label class="mb-2 text-muted" for="name">Name</label>
+									<input id="name" type="text" class="form-control" name="name" value="{{mechanic.name}}" required autofocus>
+								</div>
+                                <div class="mb-3">
+									<label class="mb-2 text-muted" for="experience">Experience</label>
+									<input id="experience" type="text" class="form-control" name="experience" value="{{mechanic.experience}}" required autofocus>
+								</div>
+                                <div class="mb-3">
+									<label class="mb-2 text-muted" for="specification">Specification</label>
+									<input id="specification" type="text" class="form-control" name="specification" value="{{mechanic.specification}}" required autofocus>
+								</div>
+                                <div class="mb-3">
+									<div class="mb-2 w-100">
+										<label class="text" for="mobile">Mobile</label>
+									</div>
+									<input id="mobile" type="number" class="form-control" name="mobile" value="{{mechanic.mobile}}" required>
+								</div>
+                                <div class="mb-3">
+									<div class="mb-2 w-100">
+										<label class="text" for="city">City</label>
+									</div>
+                                    <select id="city" value="{{mechanic.city}}" name="city">
+                                        <option value="Hyd">Hyd</option>
+                                        <option value="Pune">Pune</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                    </select>
+								</div><br>
+                                <div class="mb-3">
+									<div class="mb-2 w-100">
+										<label class="text" for="address">Address</label>
+									</div>
+									<input id="address" type="text" class="form-control" name="address" value="{{mechanic.address}}" required>
+								</div>
+                                <div class="mb-3">
+									<label class="mb-2 text-muted" for="email">Email</label>
+									<input id="email" type="text" class="form-control" name="email" value="{{mechanic.email}}" readonly>
+								</div>
+
+<!--								<div class="mb-3">-->
+<!--									<div class="mb-2 w-100">-->
+<!--										<label class="text-muted" for="password">Password</label>-->
+<!--									</div>-->
+<!--									<input id="password" type="password" class="form-control" name="password" value="{{mechanic.password}}" required>-->
+<!--								</div>-->
+                                <br>
+
+									<button type="submit" class="btn btn-primary ms-auto">submit</button><br>
+        </div>
+</form>
+  <br>
+{% include 'footer.html' %}
+</body>
+</html>
